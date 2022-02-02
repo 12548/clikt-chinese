@@ -33,7 +33,8 @@ kotlin {
         }
         withJava()
     }
-    js(BOTH) {
+    js {
+        nodejs()
         browser {
 
         }
@@ -49,18 +50,14 @@ kotlin {
 
     sourceSets {
         val commonMain by getting
-        val commonTest by getting
         val jvmMain by getting {
             dependsOn(commonMain)
         }
-        val jvmTest by getting
         val jsMain by getting {
             dependsOn(commonMain)
         }
-        val jsTest by getting
         val nativeMain by getting {
             dependsOn(commonMain)
         }
-        val nativeTest by getting
     }
 }
